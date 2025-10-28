@@ -133,6 +133,37 @@ fun CounterScreen(
             color = MaterialTheme.colorScheme.primary
         )
 
+        Spacer(modifier = Modifier.height(48.dp))
+
+
+// increment and decrement buttons
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.spacedBy(12.dp)
+        ) {
+            Button(
+                onClick = onDecrement,
+                modifier = Modifier.weight(1f),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = MaterialTheme.colorScheme.error
+                )
+            ) {
+                Text("-1", fontSize = 20.sp)
+            }
+
+
+            Button(
+                onClick = onIncrement,
+                modifier = Modifier.weight(1f),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = MaterialTheme.colorScheme.primary
+                )
+            ) {
+                Text("+1", fontSize = 20.sp)
+            }
+        }
+
+
 
 
         Spacer(modifier = Modifier.height(16.dp))
@@ -181,7 +212,7 @@ fun SettingsDialog(
                     modifier = Modifier.padding(bottom = 16.dp)
                 )
 
-                listOf(1, 2, 3, 5, 10).forEach { interval ->
+                listOf(1, 2, 3, 5, 6, 7, 8, 9, 10).forEach { interval ->
                     Row(
                         modifier = Modifier
                             .fillMaxWidth()
