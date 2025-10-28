@@ -170,7 +170,8 @@ fun CounterScreen(
 
         Row(
             modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.spacedBy(12.dp)
+            horizontalArrangement = Arrangement.spacedBy(12.dp),
+            verticalAlignment = Alignment.CenterVertically
         ) {
             OutlinedButton(
                 onClick = onReset,
@@ -179,17 +180,32 @@ fun CounterScreen(
                 Text("Reset")
             }
 
-            Button(
-                onClick = onToggleAuto,
-                modifier = Modifier.weight(1f),
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = MaterialTheme.colorScheme.tertiary
-
-                )
+            // toggle auto
+            Row(
+                modifier = Modifier
+                    .weight(1f)
+                    .padding(horizontal = 8.dp),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.Center
             ) {
-                Text(if (counterState.isAutoMode) "Stop Auto" else "Start Auto")
+                Text(
+                    text = "Auto",
+                    style = MaterialTheme.typography.bodyLarge,
+                    modifier = Modifier.padding(end = 8.dp)
+                )
+
+                Switch(
+                    checked = counterState.isAutoMode,
+                    onCheckedChange = { onToggleAuto() },
+                    colors = SwitchDefaults.colors(
+                        checkedThumbColor = MaterialTheme.colorScheme.onPrimary,
+                        uncheckedThumbColor = MaterialTheme.colorScheme.onSurface
+
+                    )
+                )
             }
         }
+
     }
 }
 
