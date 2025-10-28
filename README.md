@@ -26,3 +26,7 @@ Counter++ is a reactive Android app that demonstrates unidirectional data flow a
 3. Run the app on an emulator or a physical Android device.   
 ---
 
+## Reference
+- Based on **Lecture 4, Example 2** from the CS501 course materials.  
+- [Kotlin Documentation on StateFlow](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-state-flow/)
+- [Android Developers Documentation on ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel)
